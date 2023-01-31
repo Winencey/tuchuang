@@ -4,20 +4,20 @@
 在脚本日志查看值
 
 [MITM]
-hostname = draw.jdfcloud.com
+hostname = api-dd.jd.com
 
 ===========Surge=================
 [Script]
-jd_appopen = type=http-request,pattern=^https:\/\/api\.m\.jd\.com\/openUpgrade, max-size=0, script-path=jd_appopen.js
+jd_wskey = type=http-request,pattern=^https:\/\/api-dd\.m\.jd\.com\/openUpgrade, max-size=0, script-path=jd_wskey.js
 
 ===================Quantumult X=====================
 [rewrite_local]
 # jd_wskey
-^https:\/\/api\.m\.jd\.com\/openUpgrade url script-request-header jd_wskey.js
+^https:\/\/api-dd\.m\.jd\.com\/openUpgrade url script-request-header jd_wskey.js
 
 =====================Loon=====================
 [Script]
-http-request ^https:\/\/api\.m\.jd\.com\/openUpgrade script-path=jd_wskey.js, timeout=3600, tag=jd_wskey
+http-request ^https:\/\/api-dd\.m\.jd\.com\/openUpgrade script-path=jd_wskey.js, timeout=3600, tag=jd_wskey
 
 */
 
